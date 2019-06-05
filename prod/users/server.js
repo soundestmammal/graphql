@@ -5,9 +5,11 @@
 
 const express = require('express');
 const expressGraphQL = require('express-graphql'); // glue between GraphQL and express
+const schema = require('./schema/schema');
 
 const app = express();
 app.use('/graphql', expressGraphQL({
+    schema,
     graphiql: true 
 }));
 app.listen(4000, () => {

@@ -16,8 +16,14 @@ const graphql = require('graphql');
 const {
     GraphQLObjectType,
     GraphQLString,
-    GraphQLInt
+    GraphQLInt,
+    GraphQLSchema
 } = graphql;
+
+const users= [
+    { id: "23", firstName: "Ben", age: 20 },
+    { id: "47", firstName: "Simon", age: 21}
+];
 
 // What a User Object should look like
 /* Two required properties:
@@ -40,8 +46,12 @@ const RootQuery = new GraphQLObjectType({
             type: UserType,
             args: { id: { type: GraphQLString }},
             resolve(parentValue, args) {
-
+                return _.find(users, { id: args.id });
             }
         }
     }
+});
+
+module.exports = new GraphQLSchema({
+    query: RootQuery
 });
