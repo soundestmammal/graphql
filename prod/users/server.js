@@ -2,6 +2,8 @@
 // Convention is GraphQL "Uppercase G Q L"
 // graphiql is a dev tool
 // What is a schema in GraphQL?
+// graphiql: Used to evalute queries, can run query with play button.
+
 
 const express = require('express');
 const expressGraphQL = require('express-graphql'); // glue between GraphQL and express

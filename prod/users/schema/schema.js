@@ -11,7 +11,7 @@
     (pointer) company_id ->
     (pointer) position_id ->
 */
-
+const _ = require('lodash');
 const graphql = require('graphql');
 const {
     GraphQLObjectType,
